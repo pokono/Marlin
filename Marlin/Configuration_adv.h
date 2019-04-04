@@ -424,7 +424,7 @@
 // @section lcd
 
 #if ENABLED(ULTIPANEL)
-  #define MANUAL_FEEDRATE {50*60, 50*60, 4*60, 0} // Feedrates for manual moves along X, Y, Z, E from panel
+  #define MANUAL_FEEDRATE {50*60, 50*60, 4*60, 60} // Feedrates for manual moves along X, Y, Z, E from panel
   #define ULTIPANEL_FEEDMULTIPLY  // Comment to disable setting feedrate multiplier via encoder
 #endif
 
@@ -748,9 +748,9 @@
 #if ENABLED(BABYSTEPPING)
   //#define BABYSTEP_XY              // Also enable X/Y Babystepping. Not supported on DELTA!
   #define BABYSTEP_INVERT_Z false    // Change if Z babysteps should go the other way
-  #define BABYSTEP_MULTIPLICATOR 1   // Babysteps are very small. Increase for faster motion.
+  #define BABYSTEP_MULTIPLICATOR 100   // Babysteps are very small. Increase for faster motion.
   //#define BABYSTEP_ZPROBE_OFFSET   // Enable to combine M851 and Babystepping
-  #define DOUBLECLICK_FOR_Z_BABYSTEPPING // Double-click on the Status Screen for Z Babystepping.
+  //#define DOUBLECLICK_FOR_Z_BABYSTEPPING // Double-click on the Status Screen for Z Babystepping.
   #define DOUBLECLICK_MAX_INTERVAL 1250 // Maximum interval between clicks, in milliseconds.
                                         // Note: Extra time may be added to mitigate controller latency.
   //#define BABYSTEP_ZPROBE_GFX_OVERLAY // Enable graphical overlay on Z-offset editor
@@ -978,7 +978,7 @@
  * Requires NOZZLE_PARK_FEATURE.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
-//#define ADVANCED_PAUSE_FEATURE
+#define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
@@ -1102,38 +1102,38 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
+  #define X_CURRENT          1000  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        16  // 0..256
 
-  #define Y_CURRENT          800
+  #define Y_CURRENT          1000
   #define Y_MICROSTEPS        16
 
-  #define Z_CURRENT          800
-  #define Z_MICROSTEPS        16
-
-  #define X2_CURRENT         800
-  #define X2_MICROSTEPS       16
-
-  #define Y2_CURRENT         800
-  #define Y2_MICROSTEPS       16
-
-  #define Z2_CURRENT         800
-  #define Z2_MICROSTEPS       16
-
-  #define E0_CURRENT         800
-  #define E0_MICROSTEPS       16
-
-  #define E1_CURRENT         800
-  #define E1_MICROSTEPS       16
-
-  #define E2_CURRENT         800
-  #define E2_MICROSTEPS       16
-
-  #define E3_CURRENT         800
-  #define E3_MICROSTEPS       16
-
-  #define E4_CURRENT         800
-  #define E4_MICROSTEPS       16
+  // #define Z_CURRENT          1000
+  // #define Z_MICROSTEPS        16
+  //
+  // #define X2_CURRENT         800
+  // #define X2_MICROSTEPS       16
+  //
+  // #define Y2_CURRENT         800
+  // #define Y2_MICROSTEPS       16
+  //
+  // #define Z2_CURRENT         800
+  // #define Z2_MICROSTEPS       16
+  //
+  // #define E0_CURRENT         800
+  // #define E0_MICROSTEPS       16
+  //
+  // #define E1_CURRENT         800
+  // #define E1_MICROSTEPS       16
+  //
+  // #define E2_CURRENT         800
+  // #define E2_MICROSTEPS       16
+  //
+  // #define E3_CURRENT         800
+  // #define E3_MICROSTEPS       16
+  //
+  // #define E4_CURRENT         800
+  // #define E4_MICROSTEPS       16
 
   /**
    * Use software SPI for TMC2130.
